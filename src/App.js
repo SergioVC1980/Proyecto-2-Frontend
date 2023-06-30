@@ -8,6 +8,7 @@ import { LoginPage } from "./pages/LoginPage";
 import { LinkPage } from "./pages/LinkPage";
 import { HomePage } from "./pages/HomePage";
 import { EditProfilePage } from "./pages/EditProfilePage";
+
 function App() {
   return (
     <AuthProvider>
@@ -26,14 +27,3 @@ function App() {
   );
 }
 export default App;
-
-
-
-
-
-
-
-
-
-
-
