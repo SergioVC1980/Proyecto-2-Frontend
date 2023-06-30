@@ -149,11 +149,3 @@ export const deleteUserAccountService = async ({ userId, password, token }) => {
   // Considera añadir un retorno de algo específico (como true) si la eliminación fue exitosa
   return response.ok;
 };
-
-
-
-
-
-
-
-

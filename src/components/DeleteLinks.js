@@ -1,7 +1,6 @@
 import React from "react";
 import { deleteLinkService } from "../services";
-import { FaTrash } from "react-icons/fa"; // Importa el ícono de la papelera
-
+import { FaTrash } from "react-icons/fa";
 export const DeleteLinks = ({ id, onDelete }) => {
   const handleDelete = async () => {
     try {
@@ -11,13 +10,15 @@ export const DeleteLinks = ({ id, onDelete }) => {
       }
       await deleteLinkService(token, id);
       onDelete(id);
+      // Agrega un popup con el mensaje "Link deleted"
+      window.alert("Link deleted");
     } catch (error) {
       console.error(error.message);
     }
   };
   return (
     <button onClick={handleDelete}>
-      <FaTrash /> Delete {/* Usa el ícono de la papelera junto con el texto "Delete" */}
+      <FaTrash /> Delete
     </button>
   );
 };

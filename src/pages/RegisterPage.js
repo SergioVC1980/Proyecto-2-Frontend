@@ -2,7 +2,6 @@ import { useState } from "react";
 import { registerUserService } from "../services";
 import { useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-
 export const RegisterPage = () => {
   const navigate = useNavigate();
   const [name, setName] = useState("");
@@ -12,10 +11,9 @@ export const RegisterPage = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [error, setError] = useState("");
-  
   const toggleShowPassword = () => setShowPassword(!showPassword);
-  const toggleShowConfirmPassword = () => setShowConfirmPassword(!showConfirmPassword);
-
+  const toggleShowConfirmPassword = () =>
+    setShowConfirmPassword(!showConfirmPassword);
   const handleForm = async (e) => {
     e.preventDefault();
     if (
@@ -24,12 +22,12 @@ export const RegisterPage = () => {
       !/[0-9]/.test(password)
     ) {
       setError(
-        "La contraseña debe tener 10 caracteres o menos y contener al menos una letra mayúscula y un número"
+        "Password must be 10 characters or less and contain at least one capital letter and one number"
       );
       return;
     }
     if (password !== confirmPassword) {
-      setError("La contraseña y la confirmación de la contraseña no coinciden");
+      setError("Invalid email or password");
       return;
     }
     try {
@@ -39,7 +37,6 @@ export const RegisterPage = () => {
       setError(error.message);
     }
   };
-
   return (
     <section>
       <h1>Register</h1>
@@ -68,7 +65,7 @@ export const RegisterPage = () => {
         </fieldset>
         <fieldset>
           <label htmlFor="password">Password</label>
-          <div style={{display: "flex", alignItems: "center"}}>
+          <div style={{ display: "flex", alignItems: "center" }}>
             <input
               type={showPassword ? "text" : "password"}
               id="password"
@@ -84,7 +81,7 @@ export const RegisterPage = () => {
         </fieldset>
         <fieldset>
           <label htmlFor="confirmPassword">Confirm Password</label>
-          <div style={{display: "flex", alignItems: "center"}}>
+          <div style={{ display: "flex", alignItems: "center" }}>
             <input
               type={showConfirmPassword ? "text" : "password"}
               id="confirmPassword"
@@ -104,5 +101,4 @@ export const RegisterPage = () => {
     </section>
   );
 };
-
 export default RegisterPage;

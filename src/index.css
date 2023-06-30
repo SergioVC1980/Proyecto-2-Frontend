@@ -6,7 +6,6 @@ section {
   min-height: 100vh;
   font-size: 20px;
 }
-
 form {
   box-sizing: border-box;
   display: flex;
@@ -18,20 +17,17 @@ form {
   background-color: #F7F7F7;
   margin: 0 auto;
 }
-
 form fieldset {
   border: none;
   margin-bottom: 20px;
 }
-
 form input {
   width: 100%;
   padding: 10px;
-  border: none;
+  border:none;
   border-radius: 5px;
   background-color: #E7E7E7;
 }
-
 form button {
   padding: 10px;
   border: none;
@@ -40,27 +36,31 @@ form button {
   color: white;
   cursor: pointer;
 }
-
 form button:hover {
   background-color: #0056B3;
 }
-
 form p {
   color: red;
   margin-top: -10px;
   margin-bottom: 20px;
   text-align: center;
 }
-
 @media (max-width: 768px) {
   form {
     width: 90%;
   }
 }
-
 form button+p {
   color: red;
   margin-top: 20px;
   margin-bottom: 20px;
   text-align: center;
+}
+
+.text-error {
+  color: red;
+}
+
+.text-success {
+  color: blue;
 }

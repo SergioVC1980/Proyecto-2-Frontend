@@ -11,7 +11,7 @@ export const AuthProvider = ({ children }) => {
     const userIdstorage = localStorage.getItem("userId");
     if (token) {
       setIsAuthenticated(true);
-      setUserid(userIdstorage)
+      setUserid(userIdstorage);
     }
   }, []);
   const login = () => setIsAuthenticated(true);
@@ -20,11 +20,6 @@ export const AuthProvider = ({ children }) => {
     localStorage.removeItem("userId");
     setIsAuthenticated(false);
   };
-  const value = {setUserid,
-    isAuthenticated,
-    login,
-    logout,
-    userid,
-  };
+  const value = { setUserid, isAuthenticated, login, logout, userid };
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };

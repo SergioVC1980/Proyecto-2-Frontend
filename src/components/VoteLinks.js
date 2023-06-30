@@ -18,7 +18,7 @@ export const VoteLinks = ({ linkId, userLinks, onVote, liked }) => {
   }, [linkId, userLinks]);
   const handleVote = async () => {
     if (checkUserLink()) {
-      alert("No puedes votar tus propios enlaces");
+      alert("You can't vote your own links");
       return;
     }
     try {
@@ -48,15 +48,7 @@ export const VoteLinks = ({ linkId, userLinks, onVote, liked }) => {
   return (
     <button onClick={handleVote} disabled={checkUserLink()}>
       {voteStatus ? <FaThumbsDown /> : <FaThumbsUp />} {/* Usando los íconos */}
-      {voteStatus ? "Eliminar voto" : "Votar"}
+      {voteStatus ? "Delete Vote" : "Vote"}
     </button>
   );
 };
-
-
-
-
-
-
-
-

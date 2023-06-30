@@ -49,7 +49,7 @@ export const EditProfilePage = () => {
   };
   const handleDeleteAccount = async () => {
     const enteredPassword = window.prompt(
-      "Por favor, ingresa tu contraseña para confirmar la eliminación de la cuenta"
+      "Please enter your password to confirm account deletion"
     );
     if (enteredPassword) {
       try {
@@ -58,14 +58,14 @@ export const EditProfilePage = () => {
           password: enteredPassword,
           token,
         });
-        alert("Tu cuenta ha sido eliminada, esperamos que vuelvas pronto!!");
+        alert("Your account has been deleted, we hope you come back soon!");
         logout();
         navigate("/");
       } catch (error) {
-        setError("Hubo un problema al eliminar la cuenta");
+        setError("There was a problem deleting the account");
       }
     } else {
-      setError("Debes ingresar tu contraseña para eliminar la cuenta");
+      setError("You must enter your password to delete the account");
     }
   };
   return (
@@ -108,17 +108,14 @@ export const EditProfilePage = () => {
         <button className="button-spacing">Submit</button>
         <button
           type="button"
-          className="button-spacing"
+          className="button-spacing delete-account-button"
           onClick={handleDeleteAccount}
         >
           Delete Account
         </button>
-        {error ? <p>{error}</p> : null}
-        {success ? <p>{success}</p> : null}
+        {error ? <p className="text-error">{error}</p> : null}
+        {success ? <p className="text-success">{success}</p> : null}
       </form>
     </section>
   );
 };
-
-
-
