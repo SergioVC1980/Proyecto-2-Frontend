@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { addLinkService } from "../services";
 export const AddLinks = ({ addLink }) => {
-  console.log(addLink);
   const [newLink, setNewLink] = useState({
     url: "",
     title: "",
@@ -30,6 +29,10 @@ export const AddLinks = ({ addLink }) => {
       });
       addLink({ id: result.id, ...newLink });
       setSuccess("Your link has been added successfully");
+      // Limpia el mensaje de éxito después de 5 segundos
+      setTimeout(() => {
+        setSuccess("");
+      }, 3000);
     } catch (error) {
       setError(error.message);
     }

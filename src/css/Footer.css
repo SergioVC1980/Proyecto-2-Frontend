@@ -2,99 +2,51 @@ body {
   margin: 0px;
   padding: 0px;
 }
-
-.footer-link-left {
+.footer-container {
+  height: 60px;
   position: fixed;
-  left: 20px;
-  bottom: 20px;
-  z-index: 20;
-  color: #FFFFFF;
-  font-size: 1.5em;
-}
-
-.footer-link-right {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  color: #FFFFFF;
-  font-size: 1.5em;
-}
-
-.footer-link-right a {
-  color: #FFFFFF;
-  /* Color de los íconos */
-  margin-right: 10px;
-  /* Espacio a la derecha de cada ícono */
-}
-
-.footer-link-right a:hover {
-  color: #0000FF;
-  /* Color de los íconos al pasar el ratón por encima */
-}
-
-.fixed-footer {
-  position: fixed;
-  left: 0;
   bottom: 0;
   width: 100%;
-  text-align: center;
   background-color: #333333;
-  padding: 20px;
-  color: #FFFFFF;
+}
+.fixed-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 0 20px;
+  color: #ffffff;
   font-size: 1.5em;
 }
-
-@media (max-width: 750px) {
+.fixed-footer span {
+  order: 1;
+}
+.footer-link-left {
+  order: 2;
+  color: #ffffff; /* Añadir color a "Legal Warning" */
+}
+.footer-link-right {
+  order: 3;
+}
+.footer-link-right a {
+  color: #ffffff;
+  margin-left: 10px;
+}
+.footer-link-right a:hover {
+  color: #0000ff;
+}
+@media (max-width: 425px) {
   .footer-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 40vh;
-    justify-content: flex-end;
+    height: auto;
   }
-
-  .footer-link-left {
-    position: static;
-    width: 100%;
-    text-align: center;
-    background-color: #333333;
-    order: 3;
-    padding: 10px 0px;
-    color: #FFFFFF;
-    font-size: 0.5em;
-  }
-
-  .footer-link-right {
-    position: static;
-    width: 100%;
-    text-align: center;
-    background-color: #333333;
-    order: 2;
-    padding: 10px 0px;
-    color: #FFFFFF;
-    font-size: 0.5em;
-  }
-
-  .footer-link-right a {
-    color: #FFFFFF;
-    /* Color de los íconos */
-    margin-right: 10px;
-    /* Espacio a la derecha de cada ícono */
-  }
-
-  .footer-link-right a:hover {
-    color: #0000FF;
-    /* Color de los íconos al pasar el ratón por encima */
-  }
-
   .fixed-footer {
-    position: static;
-    width: 100%;
-    text-align: center;
-    order: 1;
-    padding: 10px 0px;
-    background-color: #333333;
-    color: #FFFFFF;
-    font-size: 0.5em;
+    flex-direction: column;
+    font-size: 1em;
+    padding: 10px 0;
+  }
+  .footer-link-right a {
+    font-size: 0.8em;
+    margin-right: 5px;
+    margin-left: 0;
   }
 }
